@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GraphQL tutorial</title>
+</head>
+<body>
+<h1>Hello [Finished]</h1>
+<p>Welcome to this GraphQL tutorial</p>
+<p>Your server works!</p>
+<hr>
+
+<h2>Library</h2>
+<button id="btn">Get a random book</button>
+<div id="output"></div>
+
+<script>
+    const btn = document.querySelector('#btn')
+    const output = document.querySelector('#output')
+
+    btn.addEventListener('click', () => fetchBook())
+
+    function fetchBook() {
+        const id = Math.floor(Math.random() * 6) + 1
+        fetch('http://localhost:3000/api',
+            {
+                method: 'POST',
+                body: JSON.stringify({
+                    query: `{book(id: ${id}) {title}}`
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(function (res) {
+                return res.json()
+            })
+            .then(function (res) {
+                if (res.data)
+                    output.innerHTML = res.data.book.title;
+            })
+            .catch((err) => console.warn(err.message))
+    }
+</script>
+</body>
+</html>
