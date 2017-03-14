@@ -24,6 +24,27 @@ I have intentionally omitted using a proper database for this tutorial as it wou
 
 - That's it, you're ready to follow the tutorial.
 
+## Project structure
+
+The project is structured like the following: 
+
+```
+├── app.js
+├── bin
+│   └── www
+├── data
+│   └── library.js
+├── package.json
+├── routes
+│   └── index.js
+└── views
+    ├── error.ejs
+    └── index.ejs
+```
+
+We will focus mainly on the `routes/index.js` and `data/library.js`. 
+
+If this is your first Node project, don't worry about the rest of the files.
 
 ## Solution
 
