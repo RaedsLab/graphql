@@ -69,6 +69,17 @@ const Library = [
         title: 'Lucene in Action, Second Edition',
         isbn: '0-423-14289-8',
         price: 30.99
+    },
+    {
+        id: 7,
+        category: 'fiction',
+        author: {
+            name: 'George R. R. Martin',
+            birthday: '20 September 1948'
+        },
+        title: 'Song of Ice and Fire',
+        isbn: '0-007-47716-3',
+        price: 54.00
     }
 ];
 
